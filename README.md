@@ -51,7 +51,7 @@ copy path present in the browser
 cat <copy_path> (**copy the password and enter in the nexus**)
 
 
-Nexus → settings → repo → create → maven2 hosted → name(bakend) → version ploicy(mixed) → layout policy(permissiva) → deployment policy (allow redeploy) → create → copy url
+Nexus → settings → repo → create → maven2 hosted → name(backend) → version ploicy(mixed) → layout policy(permissiva) → deployment policy (allow redeploy) → create → copy url
 
 Jenkins → Manage jenkins → create node(expense) → remote root(/home/ec2-user/jenkins-agent) → Labels(AGENT-1) → Usage(only build jobs) → launch via ssh → jenkins-agent.eswarsaikumar.site
 
@@ -64,6 +64,13 @@ Jenkins → Expense folder → ok
 How to move zip file to nexus (have to install **nexus artifact downloader**(plugin) in jenkins)
 
 **adding nexus credentials in jenkins** Jenkins → credentials → global → add → username > password → id(nexus-auth) → add
+
+
+
+
+
+Nexus → settings → repo → create → maven2 hosted → name(frontend) → version ploicy(mixed) → layout policy(permissiva) → deployment policy (allow redeploy) → create → copy url
+
 
 Run the backend pipeline, we can see zip file will get downloaded in nexus
 
