@@ -30,7 +30,7 @@ cat <copy_path> (**copy the password and enter in the jenkins**)
 
 # 2. Open **jenkins-agent** instance in server and run the below command
 
-**(configure aws credentials in jenkins)**
+**(configure aws credentials in jenkins-agent using "aws configure" command, make sure that run in a normal user)**
 
 ```
 sh jenkins-agent.sh
@@ -58,6 +58,8 @@ Jenkins → Manage jenkins → create node(expense) → remote root(/home/ec2-us
 Jenkins → Expense folder → ok
 
 +New Item → backend → pipeline → scm(git) enter all details of repo → apply → save
+
++New Item → backend-deploy → pipeline → scm(git) enter all details of repo → apply → save
 
 How to move zip file to nexus (have to install **nexus artifact downloader**(plugin) in jenkins)
 
