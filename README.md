@@ -65,7 +65,7 @@ copy path present in the browser
 
 - How to move zip file to nexus (have to install **nexus artifact downloader**(plugin) in jenkins)
 
-**adding nexus credentials in jenkins** Jenkins → credentials → global → add → username > password → id(nexus-auth) → add
+- **adding nexus credentials in jenkins** Jenkins → credentials → global → add → username → password → id(nexus-auth) → add
 
 - Nexus → settings → repo → create → maven2 hosted → name(frontend) → version ploicy(mixed) → layout policy(permissiva) → deployment policy (allow redeploy) → create → copy url
 
