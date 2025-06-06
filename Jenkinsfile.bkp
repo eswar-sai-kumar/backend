@@ -14,7 +14,7 @@ pipeline {
         def appVersion = '' //variable declaration
         nexusUrl = 'nexus.eswarsaikumar.site:8081'
         region = "us-east-1"
-        account_id = "315069654700"
+        account_id = "992382681023"
     }
     stages {
         stage('read the version'){
@@ -43,7 +43,7 @@ pipeline {
                 """
             }
         }
-        stage('Docker build'){
+        /* stage('Docker build'){
             steps{
                 sh """
                     aws ecr get-login-password --region ${region} | docker login --username AWS --password-stdin ${account_id}.dkr.ecr.${region}.amazonaws.com
@@ -64,9 +64,9 @@ pipeline {
                     helm upgrade backend .
                 """
             }
-        }
+        } */
         
-        /* stage('Sonar Scan'){
+        stage('Sonar Scan'){
             environment {
                 scannerHome = tool 'sonar-6.0' //referring scanner CLI
             }
@@ -85,9 +85,9 @@ pipeline {
                 waitForQualityGate abortPipeline: true
               }
             }
-        } */
+        }
 
-        /* stage('Nexus Artifact Upload'){
+        stage('Nexus Artifact Upload'){
             steps{
                 script{
                     nexusArtifactUploader(
@@ -107,8 +107,8 @@ pipeline {
                     )
                 }
             }
-        } */
-        /* stage('Deploy'){
+        }
+        stage('Deploy'){
             when{
                 expression{
                     params.deploy
@@ -122,7 +122,7 @@ pipeline {
                     build job: 'backend-deploy', parameters: params, wait: false
                 }
             }
-        } */
+        }
     }
     post { 
         always { 
